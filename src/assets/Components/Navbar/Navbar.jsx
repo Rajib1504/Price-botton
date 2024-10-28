@@ -1,4 +1,5 @@
 import NavList from "../NavList/NavList";
+import { TiThMenu } from "react-icons/ti";
 
 const Navbar = () => {
   const routes = [
@@ -10,9 +11,14 @@ const Navbar = () => {
   ];
   return (
     <div>
-      {routes.map((route) => (
-        <NavList key={route.is} route={route}></NavList>
-      ))}
+      <div>
+        <TiThMenu />
+      </div>
+      <ul className="bg-pink-100 md:flex flex-row gap-5 justify-center">
+        {routes.map((route) => (
+          <NavList key={route.is} route={route}></NavList>
+        ))}
+      </ul>
     </div>
   );
 };

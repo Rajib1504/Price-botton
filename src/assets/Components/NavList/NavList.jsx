@@ -1,6 +1,17 @@
-const NavList = (route) => {
-  console.log(route);
-  return <div></div>;
+import PropTypes from "prop-types";
+const NavList = ({ route }) => {
+  const { id, path, name } = route;
+  console.log(id);
+  return (
+    <div className="text-[ffff]">
+      <li id={id} className="font-bold">
+        <a href={path}>{name}</a>
+      </li>
+    </div>
+  );
+};
+NavList.propTypes = {
+  route: PropTypes.object,
 };
 
 export default NavList;
