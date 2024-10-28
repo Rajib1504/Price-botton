@@ -24,8 +24,10 @@ const Navbar = () => {
       </div>
       <div className=" font-bold text-2xl">Logo</div>
       <ul
-        className={`bg-yellow-100 md:flex absolute md:static  duration-1000 ${
-          open === true ? "top-12 left-4 " : "top-12 -left-60"
+        className={`bg-yellow-100 md:bg-transparent md:flex absolute md:static  duration-1000 ${
+          open === true
+            ? "top-14 left-6 rounded-md p-2 w-36"
+            : "top-12 -left-60 "
         }  flex-row gap-5 justify-center px-2`}
       >
         {routes.map((route) => (
