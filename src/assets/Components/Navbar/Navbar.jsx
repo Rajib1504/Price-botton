@@ -1,5 +1,7 @@
+import { useState } from "react";
 import NavList from "../NavList/NavList";
 import { TiThMenu } from "react-icons/ti";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const routes = [
@@ -9,16 +11,28 @@ const Navbar = () => {
     { id: 4, path: "/contact", name: "Contact" },
     { id: 5, path: "/blog", name: "Blog" },
   ];
+  const [open, setOpen] = useState(false);
+  console.log(open);
   return (
-    <div>
-      <div>
-        <TiThMenu />
+    <div className="bg-pink-100 flex p-3 items-center justify-between">
+      <div className="  md:hidden" onClick={() => setOpen(!open)}>
+        {open === true ? (
+          <IoCloseSharp className="text-2xl" />
+        ) : (
+          <TiThMenu className="text-2xl"></TiThMenu>
+        )}
       </div>
-      <ul className="bg-pink-100 md:flex flex-row gap-5 justify-center">
+      <div></div>
+      <ul
+        className={`bg-yellow-100 md:flex absolute duration-1000 ${
+          open === true ? "top-12 left-4 " : "top-12 -left-60"
+        } w-32  flex-row gap-5 justify-center px-2`}
+      >
         {routes.map((route) => (
           <NavList key={route.is} route={route}></NavList>
         ))}
       </ul>
+      <btn className="btn">click</btn>
     </div>
   );
 };
