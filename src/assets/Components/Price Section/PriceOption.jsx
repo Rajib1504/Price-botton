@@ -75,7 +75,7 @@ const PriceOption = () => {
   return (
     <div className="bg-blue-100">
       <h2 className="text-3xl text-center font-bold ">Subscription Plans:</h2>
-      <div>
+      <div className="grid md:grid-cols-3 gap-6 rounded-lg ">
         {subscriptionDetails.map((singleDetails) => (
           <SubscriptionDetails
             key={singleDetails.id}
