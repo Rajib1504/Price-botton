@@ -15,7 +15,7 @@ const SubscriptionDetails = ({ singleDetails }) => {
         <ol className="mt-2">
           <p>{features}</p>
         </ol>
-        <div className="flex-grow ">
+        <div className="flex-grow">
           <button className="btn bg-green-500 rounded-lg hover:bg-green-900 w-full my-2">
             Buy now
           </button>
